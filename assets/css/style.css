@@ -332,8 +332,21 @@ main {
 }
 
 .avatar-box {
-  background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  background: var(--bg-gradient-onyxy);
+  border-radius: 50%; 
+  width: 150px;
+  height: 150px;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 50%; 
 }
 
 .info-content .name {
@@ -1934,4 +1947,28 @@ textarea.form-input::-webkit-resizer { display: none; }
 .skill-card p {
   color: #b0b0b0;
   font-size: 1rem;
+}
+
+.resume-btn{
+  display: inline-block;
+  padding: 12px 20px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #29292b;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.download-btn:hover {
+  background-color: #737375;
 }
