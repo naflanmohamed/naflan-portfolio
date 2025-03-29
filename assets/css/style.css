@@ -848,7 +848,7 @@ main {
  * skills 
  */
 
-.skills-title { margin-bottom: 20px; }
+/* .skills-title { margin-bottom: 20px; } */
 
 .skills-list { padding: 20px;
               color: #ad8003; }
@@ -859,8 +859,9 @@ main {
 .skill .title-wrapper {
   display: flex;
   align-items: center;
-  gap: 5px;
-  margin-bottom: 8px;
+  gap: 15px;
+  margin-bottom: 25px;
+  /* padding-top: 10px; */
 }
 
 .skill .title-wrapper data {
