@@ -1900,13 +1900,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* Heading */
-/* .skills-section h3 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #e0e0e0;
-} */
+
 
 /* Skill Card Titles */
 .skill-card h5 {
@@ -1986,12 +1980,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .certification-icon-box {
   display: flex;
-  /* background: var(--bg-gradient-onyx);
-  border-radius: 14px;
-  box-shadow: var(--shadow-2); */
   padding: 4px;
-  /* margin-top: 5px; */
-
 }
 
 .certification-icon-box p{
@@ -2021,47 +2010,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   font-weight: 400;
   margin-left: auto;
 }
-/* 
-.certification-link-button{
-  display: inline-block;
-  padding: 8px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #373739;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-left: 650px;
-
-}
-
-.certification-link-button:hover {
-  background-color: #0f06c8;
-}
-
-.certification-link-button:active {
-  background-color: #0f06c8;
-}
-
-.certification-link:hover {
-  color: #29292b;
-}
-
-.certification-link {
-  color: #0f06c8;
-}
-
-.certification-desc-text{
-  color: #e0dfdf;
-  font-size: 0.9rem;
-  font-weight: 300;
-  line-height: 1.5;
-  margin-left: 10px;
-  white-space: normal;
-  word-wrap: break-word;
-} */
 
 /* ---------------- */
 .certification-desc {
