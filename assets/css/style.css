@@ -2056,3 +2056,69 @@ textarea.form-input::-webkit-resizer { display: none; }
 .certification-link:hover {
   background-color: #2563eb;
 }
+
+@media (max-width: 1024px) {
+  .certification-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .certification-date {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .certification-desc {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0 0 0;
+  }
+
+  .certification-desc-left,
+  .certification-desc-right {
+    width: 100%;
+  }
+
+  .certification-desc-right {
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .certification-link {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 600px) {
+  .certification-card {
+    padding: 10px;
+  }
+
+  .certification h3 {
+    font-size: 1.3rem;
+  }
+
+  .certification-icon-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .certification-icon-box img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .certification-text {
+    font-size: 0.85rem;
+  }
+
+  .certification-desc-left {
+    font-size: 0.95rem;
+  }
+
+  .certification-link {
+    font-size: 13px;
+    padding: 0.5rem 1rem;
+  }
+}
