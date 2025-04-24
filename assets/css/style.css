@@ -28,11 +28,19 @@
     hsl(240, 1%, 25%) 3%, 
     hsl(0, 0%, 19%) 97%
   );
+  /* --bg-gradient-jet: linear-gradient(
+    to bottom right, 
+    hsla(240, 1%, 18%, 0.251) 0%, 
+    hsla(240, 2%, 11%, 0) 100%
+  ), hsl(240, 2%, 13%); */
+
   --bg-gradient-jet: linear-gradient(
     to bottom right, 
     hsla(240, 1%, 18%, 0.251) 0%, 
     hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
+  ), hsl(220, 18%, 10%);
+  
+
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
     #0167d3 0%, 
@@ -40,8 +48,8 @@
   );
   --bg-gradient-yellow-2: linear-gradient(
     135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
+    hsla(218, 93%, 17%, 0.715) 0%, 
+    hsla(211, 81%, 15%, 0) 59.86%
   ), hsl(240, 2%, 13%);
   --border-gradient-onyx: linear-gradient(
     to bottom right, 
@@ -56,7 +64,7 @@
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
+  /* --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
@@ -67,7 +75,21 @@
   --vegas-gold: #1266bf;
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --bittersweet-shimmer: hsl(0, 43%, 51%); */
+
+  --jet: hsl(210, 10%, 23%);              /* Dark slate blue replacement */
+  --onyx: hsl(220, 9%, 18%);              /* Deeper charcoal tone */
+  --eerie-black-1: hsl(220, 10%, 14%);    /* Near black with a cool tone */
+  --eerie-black-2: hsl(220, 10%, 12%);    /* Slightly darker than above */
+  --smoky-black: hsl(220, 10%, 8%);       /* Rich deep black with blue tone */
+  --white-1: hsl(0, 0%, 100%);            /* Pure white (unchanged) */
+  --white-2: hsl(0, 0%, 97%);             /* Soft white for contrast */
+  --orange-yellow-crayola: #007aff;      /* iOS-style vibrant blue */
+  --vegas-gold: #3399ff;                 /* Calmer, balanced blue */
+  --light-gray: hsl(0, 0%, 85%);         /* Slightly lighter for clarity */
+  --light-gray-70: hsla(0, 0%, 85%, 0.7);/* Lighter gray with same opacity */
+  --bittersweet-shimmer: hsl(358, 65%, 60%); /* A richer red-pink tone */
+
 
   /**
    * typography
@@ -473,7 +495,8 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  /* background: hsla(240, 1%, 17%, 0.75); */
+  background: hsla(213, 9%, 20%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -536,12 +559,25 @@ main {
   gap: 20px;
 }
 
-.service-item {
+/* .service-item {
   position: relative;
   background: var(--border-gradient-onyx);
   padding: 20px;
   border-radius: 14px;
   box-shadow: var(--shadow-2);
+  z-index: 1;
+} */
+
+.service-item {
+  position: relative;
+  background: var(linear-gradient(
+    145deg,
+    hsl(212, 78%, 18%),
+    hsl(210, 35%, 22%)
+  ));
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(13, 7, 126, 0.208);
   z-index: 1;
 }
 
@@ -552,7 +588,22 @@ main {
   background: var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.055); /* soft border for depth */
 }
+
+/* 
+.service-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+} */
+
+
 
 .service-icon-box { margin-bottom: 10px; }
 
@@ -1887,13 +1938,30 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 /* Skill Card Styling */
-.skill-card {
+/* .skill-card {
   background-color: #29292b;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+.skill-card {
+  background: linear-gradient(
+    to bottom right,
+    hsla(210, 15%, 30%, 0.25),
+    hsla(210, 15%, 20%, 0.15)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); */
+  box-shadow: 0 8px 20px rgba(5, 16, 58, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .skill-card:hover {
   transform: scale(1.05);
@@ -1927,7 +1995,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   font-size: 16px;
   font-weight: bold;
   color: #fff;
-  background-color: #29292b;
+  background: linear-gradient(
+    to bottom right,
+    hsla(210, 13%, 25%, 0.25),
+    hsla(210, 17%, 14%, 0.15)
+  );
   text-decoration: none;
   border-radius: 8px;
   transition: background 0.3s ease-in-out;
@@ -1937,7 +2009,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .download-btn:hover {
-  background-color: #0875ea;
+  background: linear-gradient(
+    to bottom right,
+    hsla(236, 87%, 33%, 0.664),
+    hsla(257, 86%, 38%, 0.307)
+  );
 }
 
 
@@ -1958,18 +2034,33 @@ textarea.form-input::-webkit-resizer { display: none; }
   color: #ffffff;
 }
 
-.certification-card {
+/* .certification-card {
   background-color: #29292b;
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   margin-bottom: 20px;
+} */
+
+.certification-card {
+  background: linear-gradient(
+    to bottom right,
+    hsla(210, 13%, 25%, 0.25),
+    hsla(210, 17%, 14%, 0.15)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(16, 2, 56, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin-bottom: 20px;
 }
 
 .certification-card:hover {
   transform: scale(1.02);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 6px 12px rgba(16, 3, 88, 0.318);
 }
 
 
@@ -2021,7 +2112,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   border-radius: 12px;
   /* padding: 20px; */
   /* gap: 20px; */
-  color: rgb(220, 218, 218);
+  color: rgb(230, 229, 229);
   text-align: justify;
   padding-left: 15px;
 }
@@ -2046,7 +2137,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   font-size: 14px;
   font-weight: bold;
   color: #fff;
-  background-color: #373739;
+  background-color: #28282f;
   text-decoration: none;
   border-radius: 8px;
   transition: background 0.3s ease-in-out;
@@ -2054,7 +2145,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .certification-link:hover {
-  background-color: #2563eb;
+  /* background-color: #011030; */
+  background-color: rgba(4, 1, 41, 0.322);
+
 }
 
 @media (max-width: 1024px) {
