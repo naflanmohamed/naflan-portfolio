@@ -1986,6 +1986,22 @@ textarea.form-input::-webkit-resizer { display: none; }
   font-size: 1rem;
 }
 
+.skill-card-icon-box{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+.skill-card-icon-box img {
+  margin: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  padding: 7px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 .resume-btn{
   display: inline-block;
   padding: 12px 20px;
