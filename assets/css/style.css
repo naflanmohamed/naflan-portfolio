@@ -326,7 +326,8 @@ article.active {
 main {
   margin: 15px 12px;
   margin-bottom: 75px;
-  min-width: 259px;
+  min-width: 350px;
+  
 }
 
 
@@ -339,9 +340,10 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
+  max-height: 150px;
+  min-width: 360px;
   overflow: hidden;
-  transition: var(--transition-2);
+  transition: var(--transition-2);  
 }
 
 .sidebar.active { max-height: 405px; }
@@ -2012,7 +2014,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   background: linear-gradient(
     to bottom right,
     hsla(236, 87%, 33%, 0.664),
-    hsla(257, 86%, 38%, 0.307)
+    hsla(257, 90%, 23%, 0.307)
   );
 }
 
