@@ -2027,13 +2027,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .certification-desc-left {
-  width:70%;
-  font-size: 1rem;
+  width:75%;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
 .certification-desc-right {
-  width: 30%;
+  width: 25%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -2113,9 +2113,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     font-size: 0.85rem;
   }
 
-  .certification-desc-left {
+  /* .certification-desc-left {
     font-size: 0.95rem;
-  }
+  } */
 
   .certification-link {
     font-size: 13px;
