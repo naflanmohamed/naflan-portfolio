@@ -13,7 +13,6 @@ Welcome to my personal portfolio repository. Here, I showcase my skills, project
 - [Customization](#customization)
 - [Deployment](#deployment)
 - [Contact](#contact)
-- [License](#license)
 
 ## About Me
 
@@ -38,12 +37,12 @@ I am a Computer Science undergraduate. Passionate MERN Stack Developer and Cyber
 
 ```
 naflan-portfolio/
-├── assets/            # Images, icons, and media files
-├── css/               # Stylesheets and themes
-├── js/                # JavaScript modules and scripts
-├── index.html         # Main landing page
-├── README.md          # Project documentation
-└── LICENSE            # MIT License file
+├── assets/
+│   ├── css/      # Stylesheets and theme files
+│   ├── images/   # Portfolio images and icons
+│   └── js/       # JavaScript modules and scripts
+├── index.html    # Main landing page
+└── README.md     # Project documentation
 ```
 
 ## Getting Started
@@ -64,7 +63,6 @@ To view and run this portfolio locally:
 
 - Navigate through the site using the navbar or scroll interactions.
 - Review project details, live demos, and source code links.
-- Use the theme toggle for light/dark mode preferences.
 - Submit a message via the contact form to get in touch with me.
 
 ## Customization
@@ -90,15 +88,10 @@ Once deployed, your site will be available at `https://<username>.github.io/nafl
 
 I’m always open to new opportunities and collaborations.
 
-- **Email**: nafla***@gmail.com
-- **LinkedIn**: [linkedin.com/in/naflanmohamed](https://www.linkedin.com/in/naflanmohamed)
+- **LinkedIn**: [linkedin.com/in/naflanmohamed](https://www.linkedin.com/in/naflan-mohamed)
 - **GitHub**: [github.com/naflanmohamed](https://github.com/naflanmohamed)
 
 Feel free to reach out for any questions, feedback, or project inquiries.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for full details.
 
 
 ## License
