@@ -89,6 +89,6 @@ Once deployed, your site will be available at `https://<username>.github.io/nafl
 I’m always open to new opportunities and collaborations.
 
 - **LinkedIn**: [linkedin.com/in/naflanmohamed](https://www.linkedin.com/in/naflan-mohamed)
-- **GitHub**: [github.com/naflanmohamed](https://github.com/naflanmohamed)
+- **GitHub**:   [github.com/naflanmohamed](https://github.com/naflanmohamed)
 
 Feel free to reach out for any questions, feedback, or project inquiries.
