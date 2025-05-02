@@ -22,7 +22,7 @@ I am a Computer Science undergraduate. Passionate MERN Stack Developer and Cyber
 
 - **Fully Responsive Design**: Optimized for mobile, tablet, and desktop screens.
 - **Smooth Navigation**: Intuitive scrolling and clear call-to-action links.
-- **Project Highlights**: Detailed showcase of development and cybersecurity projects.
+- **Project Highlights**: Detailed showcase of development projects.
 - **Skill Visualizations**: Interactive charts representing my technical competencies.
 - **Contact Form**: Easy-to-use form for direct inquiries.
 - **Performance Optimization**: Minified assets and lazy-loaded images.
