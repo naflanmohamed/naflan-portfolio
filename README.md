@@ -92,9 +92,3 @@ I’m always open to new opportunities and collaborations.
 - **GitHub**: [github.com/naflanmohamed](https://github.com/naflanmohamed)
 
 Feel free to reach out for any questions, feedback, or project inquiries.
-
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
