@@ -1005,6 +1005,48 @@ main {
 
 .project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
 
+
+/* ----------------------new project ------------ */
+.project-item-icon-box-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: var(--transition-1);
+  z-index: 1;
+}
+
+.project-icon-link {
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.project-item > a:hover + .project-item-icon-box-wrapper,
+.project-item:hover .project-item-icon-box-wrapper {
+  opacity: 1;
+}
+
+.project-icon-link:hover {
+  transform: scale(1.1);
+}
+
+.project-item:hover img {
+  transform: scale(1.1);
+}
+
+/* --------------------------------- */
+
+
 .project-item-icon-box {
   --scale: 0.8;
 
