@@ -346,7 +346,7 @@ main {
   transition: var(--transition-2);  
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active { max-height: 600px; }
 
 .sidebar-info {
   position: relative;
@@ -1302,8 +1302,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   #RESPONSIVE
 \*-----------------------------------*/
 
-
-
 /**
  * responsive larger than 450px screen
  */
@@ -1416,7 +1414,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-bottom: 30px;
   }
 
-  .sidebar.active { max-height: 584px; }
+  .sidebar.active { max-height: 650px; }
 
   .sidebar-info { gap: 25px; }
 
@@ -1721,6 +1719,8 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     margin-left: auto;
   }
+
+  
   
 }
 
@@ -1994,13 +1994,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 /* Skill Card Styling */
-/* .skill-card {
-  background-color: #29292b;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-} */
+
 
 .skill-card {
   background: linear-gradient(
@@ -2106,14 +2100,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   color: #ffffff;
 }
 
-/* .certification-card {
-  background-color: #29292b;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  margin-bottom: 20px;
-} */
 
 .certification-card {
   background: linear-gradient(
@@ -2403,5 +2389,17 @@ textarea.form-input::-webkit-resizer { display: none; }
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+@media (max-width: 1300px) {
+  .skill-card-icon-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
 
 
