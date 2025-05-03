@@ -2326,3 +2326,82 @@ textarea.form-input::-webkit-resizer { display: none; }
   position: relative;
   padding: 0 60px;
 }
+
+/* Like Button Style */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: -5px;
+}
+
+.like-button {
+  background: var(--eerie-black-2);
+  color: var(--orange-yellow-crayola);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
+  text-decoration: none;
+  display: flex;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.like-button:hover {
+  transform: scale(1.2);
+}
+
+.liked {
+  color: red;
+}
+
+.like-desc {
+  font-size: 13.5px;
+  font-weight: var(--fw-400);
+  color: var(--light-gray);
+  margin-left: 10px;
+  text-align: center;
+  font-style: italic;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.like-button:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+.thank-you-message {
+  color: #bec3e2;
+  font-size: var(--fs-7);
+  text-align: center;
+  display: none; 
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
