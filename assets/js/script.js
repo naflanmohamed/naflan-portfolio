@@ -185,6 +185,50 @@ for (let i = 0; i < navigationLinks.length; i++) {
 // like button script
 
 // Firebase configuration and initialization
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCssniP8HTqs2DMKPyPC55UjefRDYn4HxE",
+//   authDomain: "naflan-portfolio.firebaseapp.com",
+//   projectId: "naflan-portfolio",
+//   storageBucket: "naflan-portfolio.firebasestorage.app",
+//   messagingSenderId: "228503860400",
+//   appId: "1:228503860400:web:0af6e64761f697e9d3b775",
+//   measurementId: "G-09CKN3BP9S",
+// };
+
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// const database = firebase.database();
+// const likeRef = database.ref("likes/portfolio");
+
+// // DOM Elements
+// const likeBtn = document.getElementById("like-btn");
+// const likeCount = document.getElementById("like-count");
+// const likeDesc = document.querySelector(".like-desc");
+// const thankYouMessage = document.querySelector(".thank-you-message");
+
+// // Load and display like count
+// likeRef.on("value", (snapshot) => {
+//   const count = snapshot.val() || 0;
+//   likeCount.textContent = count;
+
+//   // If already liked, update the button visually
+//   if (localStorage.getItem("hasLiked")) {
+//     likeBtn.disabled = true;
+//     likeBtn.innerHTML = `❤️ <span id="like-count">${count}</span>`;
+//     likeDesc.style.display = "none";
+//     thankYouMessage.style.display = "block";
+//   }
+// });
+
+// // On click
+// likeBtn.addEventListener("click", () => {
+//   likeRef.transaction((current) => (current || 0) + 1);
+//   localStorage.setItem("hasLiked", "true");
+//   likeBtn.disabled = true;
+//   likeDesc.style.display = "none";
+//   thankYouMessage.style.display = "block";
+// });
+
 const firebaseConfig = {
   apiKey: "AIzaSyCssniP8HTqs2DMKPyPC55UjefRDYn4HxE",
   authDomain: "naflan-portfolio.firebaseapp.com",
@@ -195,36 +239,40 @@ const firebaseConfig = {
   measurementId: "G-09CKN3BP9S",
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
-const likeRef = database.ref("likes/portfolio");
 
-// DOM Elements
-const likeBtn = document.getElementById("like-btn");
-const likeCount = document.getElementById("like-count");
-const likeDesc = document.querySelector(".like-desc");
-const thankYouMessage = document.querySelector(".thank-you-message");
+firebase
+  .auth()
+  .signInAnonymously()
+  .then(() => {
+    const db = firebase.database();
+    const likeRef = db.ref("likes/portfolio");
 
-// Load and display like count
-likeRef.on("value", (snapshot) => {
-  const count = snapshot.val() || 0;
-  likeCount.textContent = count;
+    const likeBtn = document.getElementById("like-btn");
+    const likeCount = document.getElementById("like-count");
+    const likeDesc = document.querySelector(".like-desc");
+    const thankYouMessage = document.querySelector(".thank-you-message");
 
-  // If already liked, update the button visually
-  if (localStorage.getItem("hasLiked")) {
-    likeBtn.disabled = true;
-    likeBtn.innerHTML = `❤️ <span id="like-count">${count}</span>`;
-    likeDesc.style.display = "none";
-    thankYouMessage.style.display = "block";
-  }
-});
+    likeRef.on("value", (snapshot) => {
+      const count = snapshot.val() || 0;
+      likeCount.textContent = count;
 
-// On click
-likeBtn.addEventListener("click", () => {
-  likeRef.transaction((current) => (current || 0) + 1);
-  localStorage.setItem("hasLiked", "true");
-  likeBtn.disabled = true;
-  likeDesc.style.display = "none";
-  thankYouMessage.style.display = "block";
-});
+      if (localStorage.getItem("hasLiked")) {
+        likeBtn.disabled = true;
+        likeBtn.innerHTML = `❤️ <span id="like-count">${count}</span>`;
+        likeDesc.style.display = "none";
+        thankYouMessage.style.display = "block";
+      }
+    });
+
+    likeBtn.addEventListener("click", () => {
+      likeRef.transaction((current) => (current || 0) + 1);
+      localStorage.setItem("hasLiked", "true");
+      likeBtn.disabled = true;
+      likeDesc.style.display = "none";
+      thankYouMessage.style.display = "block";
+    });
+  })
+  .catch((error) => {
+    console.error("Firebase Auth Error:", error.code, error.message);
+  });
