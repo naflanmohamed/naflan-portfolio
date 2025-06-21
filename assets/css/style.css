@@ -2099,5 +2099,17 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
+.about-linkedin {
+  display: inline;
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+  transition: color 0.3s ease;
+  color: #c9c9caa2;
+}
+
+.about-linkedin:hover {
+  color: #0A66C2;
+}
 
 
