@@ -1,6 +1,6 @@
 # Naflan Mohamed Portfolio
 
-[🔗 Live Demo](https://naflanmohamed.github.io/naflan-portfolio/)
+[🔗 Live](https://naflanmohamed.github.io/naflan-portfolio/)
 
 Welcome to my personal portfolio repository. Here, I showcase my skills, projects, and experience as a web developer and cybersecurity enthusiast. This repository contains all the source code, assets, and documentation for my responsive, modern portfolio website designed to highlight my professional journey.
 
