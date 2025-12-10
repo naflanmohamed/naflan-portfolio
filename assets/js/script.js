@@ -1,213 +1,213 @@
-"use strict";
+'use strict'
 
 // element toggle function
 const elementToggleFunc = function (elem) {
-  elem.classList.toggle("active");
-};
+  elem.classList.toggle('active')
+}
 
 // sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+const sidebar = document.querySelector('[data-sidebar]')
+const sidebarBtn = document.querySelector('[data-sidebar-btn]')
 
 // sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () {
-  elementToggleFunc(sidebar);
-});
+sidebarBtn.addEventListener('click', function () {
+  elementToggleFunc(sidebar)
+})
 
 // testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
+const testimonialsItem = document.querySelectorAll('[data-testimonials-item]')
+const modalContainer = document.querySelector('[data-modal-container]')
+const modalCloseBtn = document.querySelector('[data-modal-close-btn]')
+const overlay = document.querySelector('[data-overlay]')
 
 // modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
+const modalImg = document.querySelector('[data-modal-img]')
+const modalTitle = document.querySelector('[data-modal-title]')
+const modalText = document.querySelector('[data-modal-text]')
 
 // modal toggle function
 const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-};
+  modalContainer.classList.toggle('active')
+  overlay.classList.toggle('active')
+}
 
 // add click event to all modal items
 for (let i = 0; i < testimonialsItem.length; i++) {
-  testimonialsItem[i].addEventListener("click", function () {
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+  testimonialsItem[i].addEventListener('click', function () {
+    modalImg.src = this.querySelector('[data-testimonials-avatar]').src
+    modalImg.alt = this.querySelector('[data-testimonials-avatar]').alt
     modalTitle.innerHTML = this.querySelector(
-      "[data-testimonials-title]"
-    ).innerHTML;
+      '[data-testimonials-title]'
+    ).innerHTML
     modalText.innerHTML = this.querySelector(
-      "[data-testimonials-text]"
-    ).innerHTML;
+      '[data-testimonials-text]'
+    ).innerHTML
 
-    testimonialsModalFunc();
-  });
+    testimonialsModalFunc()
+  })
 }
 
 // add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+modalCloseBtn.addEventListener('click', testimonialsModalFunc)
+overlay.addEventListener('click', testimonialsModalFunc)
 
 // custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
+const select = document.querySelector('[data-select]')
+const selectItems = document.querySelectorAll('[data-select-item]')
+const selectValue = document.querySelector('[data-selecct-value]')
+const filterBtn = document.querySelectorAll('[data-filter-btn]')
 
-select.addEventListener("click", function () {
-  elementToggleFunc(this);
-});
+select.addEventListener('click', function () {
+  elementToggleFunc(this)
+})
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-  });
+  selectItems[i].addEventListener('click', function () {
+    let selectedValue = this.innerText.toLowerCase()
+    selectValue.innerText = this.innerText
+    elementToggleFunc(select)
+    filterFunc(selectedValue)
+  })
 }
 
 // filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
+const filterItems = document.querySelectorAll('[data-filter-item]')
 
 const filterFunc = function (selectedValue) {
   for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
+    if (selectedValue === 'all') {
+      filterItems[i].classList.add('active')
     } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
+      filterItems[i].classList.add('active')
     } else {
-      filterItems[i].classList.remove("active");
+      filterItems[i].classList.remove('active')
     }
   }
-};
-
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
-
-for (let i = 0; i < filterBtn.length; i++) {
-  filterBtn[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
-
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
-  });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  emailjs.init("X1po0u8VyXkS0m03H"); // EmailJS User ID
-});
+// add event in all filter button items for large screen
+let lastClickedBtn = filterBtn[0]
 
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
+for (let i = 0; i < filterBtn.length; i++) {
+  filterBtn[i].addEventListener('click', function () {
+    let selectedValue = this.innerText.toLowerCase()
+    selectValue.innerText = this.innerText
+    filterFunc(selectedValue)
+
+    lastClickedBtn.classList.remove('active')
+    this.classList.add('active')
+    lastClickedBtn = this
+  })
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  emailjs.init('X1po0u8VyXkS0m03H') // EmailJS User ID
+})
+
+const form = document.querySelector('[data-form]')
+const formInputs = document.querySelectorAll('[data-form-input]')
+const formBtn = document.querySelector('[data-form-btn]')
 
 // Enable button only when form is valid
 for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
+  formInputs[i].addEventListener('input', function () {
     if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
+      formBtn.removeAttribute('disabled')
     } else {
-      formBtn.setAttribute("disabled", "");
+      formBtn.setAttribute('disabled', '')
     }
-  });
+  })
 }
 
 // Send email on form submission
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent page reload
+form.addEventListener('submit', function (event) {
+  event.preventDefault()
 
   let formData = {
     from_name: document.querySelector("[name='fullname']").value,
     from_email: document.querySelector("[name='email']").value,
     message: document.querySelector("[name='message']").value,
-  };
+  }
 
-  emailjs.send("service_lx68tua", "template_pjqdjm8", formData).then(
+  emailjs.send('service_lx68tua', 'template_pjqdjm8', formData).then(
     function (response) {
-      alert("Message sent successfully!");
-      form.reset();
-      formBtn.setAttribute("disabled", ""); // Disable button after sending
+      alert('Message sent successfully!')
+      form.reset()
+      formBtn.setAttribute('disabled', '')
     },
     function (error) {
-      alert("Failed to send message. Try again!");
-      console.log("Email Error:", error);
+      alert('Failed to send message. Try again!')
+      console.log('Email Error:', error)
     }
-  );
-});
+  )
+})
 
 // page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
+const navigationLinks = document.querySelectorAll('[data-nav-link]')
+const pages = document.querySelectorAll('[data-page]')
 
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+  navigationLinks[i].addEventListener('click', function () {
     for (let i = 0; i < pages.length; i++) {
       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
+        pages[i].classList.add('active')
+        navigationLinks[i].classList.add('active')
+        window.scrollTo(0, 0)
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[i].classList.remove('active')
+        navigationLinks[i].classList.remove('active')
       }
     }
-  });
+  })
 }
 
 // firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCssniP8HTqs2DMKPyPC55UjefRDYn4HxE",
-  authDomain: "naflan-portfolio.firebaseapp.com",
-  projectId: "naflan-portfolio",
-  storageBucket: "naflan-portfolio.firebasestorage.app",
-  messagingSenderId: "228503860400",
-  appId: "1:228503860400:web:0af6e64761f697e9d3b775",
-  measurementId: "G-09CKN3BP9S",
-};
+  apiKey: 'AIzaSyCssniP8HTqs2DMKPyPC55UjefRDYn4HxE',
+  authDomain: 'naflan-portfolio.firebaseapp.com',
+  projectId: 'naflan-portfolio',
+  storageBucket: 'naflan-portfolio.firebasestorage.app',
+  messagingSenderId: '228503860400',
+  appId: '1:228503860400:web:0af6e64761f697e9d3b775',
+  measurementId: 'G-09CKN3BP9S',
+}
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig)
 
 firebase
   .auth()
   .signInAnonymously()
   .then(() => {
-    const db = firebase.database();
-    const likeRef = db.ref("likes/portfolio");
+    const db = firebase.database()
+    const likeRef = db.ref('likes/portfolio')
 
-    const likeBtn = document.getElementById("like-btn");
-    const likeCount = document.getElementById("like-count");
-    const likeDesc = document.querySelector(".like-desc");
-    const thankYouMessage = document.querySelector(".thank-you-message");
+    const likeBtn = document.getElementById('like-btn')
+    const likeCount = document.getElementById('like-count')
+    const likeDesc = document.querySelector('.like-desc')
+    const thankYouMessage = document.querySelector('.thank-you-message')
 
-    likeRef.on("value", (snapshot) => {
-      const count = snapshot.val() || 0;
-      likeCount.textContent = count;
+    likeRef.on('value', (snapshot) => {
+      const count = snapshot.val() || 0
+      likeCount.textContent = count
 
-      if (localStorage.getItem("hasLiked")) {
-        likeBtn.disabled = true;
-        likeBtn.innerHTML = `❤️ <span id="like-count">${count}</span>`;
-        likeDesc.style.display = "none";
-        thankYouMessage.style.display = "block";
+      if (localStorage.getItem('hasLiked')) {
+        likeBtn.disabled = true
+        likeBtn.innerHTML = `❤️ <span id="like-count">${count}</span>`
+        likeDesc.style.display = 'none'
+        thankYouMessage.style.display = 'block'
       }
-    });
+    })
 
-    likeBtn.addEventListener("click", () => {
-      likeRef.transaction((current) => (current || 0) + 1);
-      localStorage.setItem("hasLiked", "true");
-      likeBtn.disabled = true;
-      likeDesc.style.display = "none";
-      thankYouMessage.style.display = "block";
-    });
+    likeBtn.addEventListener('click', () => {
+      likeRef.transaction((current) => (current || 0) + 1)
+      localStorage.setItem('hasLiked', 'true')
+      likeBtn.disabled = true
+      likeDesc.style.display = 'none'
+      thankYouMessage.style.display = 'block'
+    })
   })
   .catch((error) => {
-    console.error("Firebase Auth Error:", error.code, error.message);
-  });
+    console.error('Firebase Auth Error:', error.code, error.message)
+  })
